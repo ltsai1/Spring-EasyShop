@@ -1,5 +1,5 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@include file="/WEB-INF/views/template/header.jsp"%>
 
 
@@ -47,7 +47,7 @@
                         <a href="#" class="btn btn-warning btn-large"
                            ng-click="addToCart('${product.productId}')"><span
                                 class="glyphicon glyphicon-shopping-cart"></span>Order Now</a>
-                        <a href="<spring:url value="/customer/cart" />"
+                        <a href="<spring:url value="/cart" />"
                            class="btn btn-default"><span class="glyphicon glyphicon-hand-right"></span>View Cart</a>
                     </p>
                 </div>
