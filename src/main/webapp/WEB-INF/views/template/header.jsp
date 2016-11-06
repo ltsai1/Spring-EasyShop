@@ -1,4 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -39,13 +40,11 @@
  
         <div id="navbar" class="navbar-collapse collapse">  
           <ul class="nav navbar-nav">
-              <li><a href="<c:url value='/header_women' />">WOMEN</a></li>
-              <li><a href="<c:url value='/header_men' />">MEN</a></li>
-              <li><a href="<c:url value='/productList' />">ALL COLLECTIONS</a></li>
+              <li><a href="<c:url value='/productList' />">ALL PRODUCTS</a></li>
           </ul>
           
           <ul class="nav navbar-nav navbar-right">
-              <li><a href="<c:url value='/order/showCart'/>"> <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+              <li><a href="<spring:url value='/cart' />"> <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
               <li><a href="<c:url value='/admin'/>">ADMIN</a></li>
               <li><a href="<c:url value='/user_login'/>">SIGN IN</a></li>
           </ul>
