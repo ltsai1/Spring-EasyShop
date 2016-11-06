@@ -4,28 +4,24 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashMap;
-import java.util.List;
+
 import java.util.Map;
 /**
  *
  * @author Camille
  */
 
-//@Entity
+
 public class Cart implements Serializable{
 
     private static final long serialVersionUID = -7103653009861995545L;
     
     private String cartId;
+    
+    //@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Map<String, CartItem> cartItems;
     private double grandTotal;
     
-    /*
-    @OneToOne
-    @JoinColumn(name = "customerId")
-    @JsonIgnore
-    private Customer customer;
-*/
     
     private Cart(){
         cartItems = new HashMap<String, CartItem>();
@@ -36,7 +32,7 @@ public class Cart implements Serializable{
         this();
         this.cartId = cartId;
     }
-   
+  
     public String getCartId() {
         return cartId;
     }
@@ -44,6 +40,7 @@ public class Cart implements Serializable{
     public void setCartId(String cartId) {
         this.cartId = cartId;
     }
+   
 
     public Map<String, CartItem> getCartItems() {
         return cartItems;
@@ -61,7 +58,7 @@ public class Cart implements Serializable{
         this.grandTotal = grandTotal;
     }
    
-   public void addCartItem(CartItem item){
+    public void addCartItem(CartItem item){
        String productId = Integer.toString(item.getProduct().getProductId());
        
        if(cartItems.containsKey(productId)){
@@ -73,18 +70,21 @@ public class Cart implements Serializable{
            cartItems.put(productId, item);
        }
        
-       updateGroundTotal();
+       updateGrandTotal();
        
    }
+   
+   
+   
    
    public void removeCartItem(CartItem item){
        String productId = Integer.toString(item.getProduct().getProductId());
        cartItems.remove(productId);
-       updateGroundTotal();
+       updateGrandTotal();
        
    }
    
-   public void updateGroundTotal(){
+   public void updateGrandTotal(){
        grandTotal =0;
        for(CartItem item: cartItems.values()){
            grandTotal = grandTotal + item.getTotalPrice();

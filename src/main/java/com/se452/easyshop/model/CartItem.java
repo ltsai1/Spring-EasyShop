@@ -1,12 +1,34 @@
 
 package com.se452.easyshop.model;
-
+import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.*;
 /**
  *
  * @author Camille
  */
-public class CartItem {
+
+//@Entity
+public class CartItem implements Serializable{
+    
+    private static final long serialVersionUID = -904360230041854157L;
+    
+    //private Product product;
+    
+    //@Id
+    //@GeneratedValue
+    private int cartItemId;
+
+    //@ManyToOne
+    //@JoinColumn(name = "cartId")
+    //@JsonIgnore
+    private Cart cart;
+
+    //@ManyToOne
+    //@JoinColumn(name = "productId")
     private Product product;
+    
+    
     private int quantity;
     private double totalPrice;
     
@@ -24,7 +46,22 @@ public class CartItem {
         this.totalPrice = product.getProductPrice();
     }
     
-   public Product getProduct(){
+     public int getCartItemId() {
+        return cartItemId;
+    }
+
+    public void setCartItemId(int cartItemId) {
+        this.cartItemId = cartItemId;
+    }
+    
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
+    public Product getProduct(){
        return product;
        
    }

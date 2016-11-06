@@ -1,10 +1,15 @@
 package com.se452.easyshop.model;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -14,7 +19,9 @@ import org.springframework.web.multipart.MultipartFile;
  * @author Camille
  */
 @Entity
-public class Product {
+public class Product implements Serializable{
+    
+    private static final long serialVersionUID = -3532377236419382983L;
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,6 +35,10 @@ public class Product {
     
     @Transient
     private MultipartFile productImage;
+    
+    //@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    //@JsonIgnore
+    //private List<CartItem> cartItemList;
 
     public Product() {}
     
