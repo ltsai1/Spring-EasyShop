@@ -38,7 +38,7 @@
             </div>
             
             <div class="form-group"> 
-                <label for="category">Category/label> <form:errors path="productCategory" cssStyle="color: #ff0000;" />
+                <label for="category">Category</label> <form:errors path="productCategory" cssStyle="color: #ff0000;" />
                     <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="clothes"/> Clothes</label>
                     <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="shoes"/> Shoes</label>
                     <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="bags"/> Bags</label>
