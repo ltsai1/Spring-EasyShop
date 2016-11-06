@@ -17,8 +17,11 @@
             </p>
         </div>
         
-        <form:form action="${pageContext.request.contextPath}/admin/productInventory/addProduct" method="post" 
-                   commandName="product" enctype="multipart/form-data">
+        <%--><form:form action="${pageContext.request.contextPath}/admin/productInventory/addProduct" method="post" 
+                   commandName="product" enctype="multipart/form-data"> --%>
+            
+            <form:form action="${pageContext.request.contextPath}/admin/productInventory/addProduct" method="post" 
+                   commandName="product">
             <div class="form-group">
                 <label for="name">Product</label> <form:errors path="productName" cssStyle="color: #ff0000;" />
                 <form:input path="productName" id="name" class="form-control" />
@@ -55,10 +58,12 @@
                 <form:input path="productPrice" id="price" class="form-Control"/> 
             </div> 
             
-            <div class="form-group">
+            <%--
+                <div class="form-group">
                 <label class="control-label" for="productImage">Upload Picture</label> 
                 <form:input id="productImage" path="productImage" type="file" class="form:input-large"/> 
-            </div> 
+                </div>
+            --%>
 
  
          <br><br> 
