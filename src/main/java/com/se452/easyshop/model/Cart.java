@@ -13,8 +13,8 @@ import java.util.Map;
 
 //@Entity
 public class Cart implements Serializable{
-    
-    private static final long serialVersionUID = 3940548625296145582L;
+
+    private static final long serialVersionUID = -7103653009861995545L;
     
     private String cartId;
     private Map<String, CartItem> cartItems;
@@ -61,7 +61,7 @@ public class Cart implements Serializable{
         this.grandTotal = grandTotal;
     }
    
-   public void addCartItems(CartItem item){
+   public void addCartItem(CartItem item){
        String productId = Integer.toString(item.getProduct().getProductId());
        
        if(cartItems.containsKey(productId)){

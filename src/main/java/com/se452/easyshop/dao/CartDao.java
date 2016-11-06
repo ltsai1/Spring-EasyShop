@@ -16,13 +16,4 @@ public interface CartDao {
 
     void delete (String cartId);
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

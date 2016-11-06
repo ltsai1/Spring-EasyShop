@@ -56,9 +56,8 @@
         </section>
 
     </div>
+    <%@include file="/WEB-INF/views/template/footer.jsp" %>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
- <script src="<c:url value="/bootstrap-3.3.7-dist/js/controller.js" /> "></script>
-
-<%@include file="/WEB-INF/views/template/footer.jsp" %>
+<script src="<c:url value="/bootstrap-3.3.7-dist/js/controller.js" /> "></script>
