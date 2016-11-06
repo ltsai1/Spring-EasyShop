@@ -12,6 +12,10 @@
     <meta name="author" content="">
 
     <title>EASYSHOP</title>
+    
+    <!-- Angular JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js" > </script>
+    
     <!-- Icon -->
     <link rel="icon" href="<c:url value='/images/favicon.ico'/>">
     <!-- Bootstrap core CSS -->
