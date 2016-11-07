@@ -40,12 +40,13 @@
  
         <div id="navbar" class="navbar-collapse collapse">  
           <ul class="nav navbar-nav">
-              <li><a href="<c:url value='/productList' />">ALL PRODUCTS</a></li>
+              <li><a href="<c:url value='/product/productList' />">ALL PRODUCTS</a></li>
           </ul>
           
           <ul class="nav navbar-nav navbar-right">
               <li><a href="<spring:url value='/cart' />"> <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
               <li><a href="<c:url value='/admin'/>">ADMIN</a></li>
+              <li><a href="<c:url value='/register'/>">REGISTER</a></li>
               <li><a href="<c:url value='/user_login'/>">SIGN IN</a></li>
           </ul>
         </div><!--/.navbar-collapse -->

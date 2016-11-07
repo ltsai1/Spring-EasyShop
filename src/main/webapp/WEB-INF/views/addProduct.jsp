@@ -20,7 +20,7 @@
         <%--><form:form action="${pageContext.request.contextPath}/admin/productInventory/addProduct" method="post" 
                    commandName="product" enctype="multipart/form-data"> --%>
             
-            <form:form action="${pageContext.request.contextPath}/admin/productInventory/addProduct" method="post" 
+            <form:form action="${pageContext.request.contextPath}/admin/product/addProduct" method="post" 
                    commandName="product">
             <div class="form-group">
                 <label for="name">Product</label> <form:errors path="productName" cssStyle="color: #ff0000;" />

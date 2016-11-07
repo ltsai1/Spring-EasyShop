@@ -8,14 +8,14 @@ import java.util.List;
  * @author duely
  */
 public interface ProductDao {
-    
-    void addProduct(Product product);
-    
-    void editProduct(Product product);
-    
+     List<Product> getProductList();
+
     Product getProductById(int id);
+
+    void addProduct(Product product);
+
+    void editProduct(Product product);
+
+    void deleteProduct(Product product);
     
-    List<Product> getAllProducts();
-    
-    void deleteProduct(int id);
 }

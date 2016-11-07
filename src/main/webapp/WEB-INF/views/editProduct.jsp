@@ -17,7 +17,7 @@
             
         </div>
         
-        <form:form action="${pageContext.request.contextPath}/admin/productInventory/editProduct" method="post" commandName="product">
+        <form:form action="${pageContext.request.contextPath}/admin/product/editProduct" method="post" commandName="product">
         <form:hidden path="productId" value="${product.productId}" />
             <div class="form-group">
                 <label for="name">Product</label> 

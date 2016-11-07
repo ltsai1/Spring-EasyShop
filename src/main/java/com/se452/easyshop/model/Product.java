@@ -36,9 +36,9 @@ public class Product implements Serializable{
     @Transient
     private MultipartFile productImage;
     
-    //@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    //@JsonIgnore
-    //private List<CartItem> cartItemList;
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    private List<CartItem> cartItemList;
 
     public Product() {}
     
@@ -103,6 +103,15 @@ public class Product implements Serializable{
 
     public MultipartFile getProductImage() {
         return productImage;
+    }
+    
+    
+    public List<CartItem> getCartItemList() {
+        return cartItemList;
+    }
+
+    public void setCartItemList(List<CartItem> cartItemList) {
+        this.cartItemList = cartItemList;
     }
  
 }

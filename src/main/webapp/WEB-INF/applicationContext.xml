@@ -40,4 +40,27 @@
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
+    
+    
+    <security:http auto-config="true">
+        <security:intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
+        <security:intercept-url pattern="/customer/**" access="ROLE_USER" />
+        <security:form-login
+            login-page="/login"
+            default-target-url="/product/productList/"
+            authentication-failure-url="/login?error"
+            username-parameter="username"
+            password-parameter="password" />
+        <security:logout
+            logout-success-url="/login?logout" />
+    </security:http>
+    
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:jdbc-user-service data-source-ref="dataSource"
+                                        authorities-by-username-query="SELECT username, authority From authorities WHERE username = ?"
+                                        users-by-username-query="SELECT username, password, enabled FROM users WHERE username = ?" />
+        </security:authentication-provider>
+    </security:authentication-manager>
+    
 </beans>

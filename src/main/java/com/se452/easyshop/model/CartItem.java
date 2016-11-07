@@ -8,43 +8,27 @@ import javax.persistence.*;
  * @author Camille
  */
 
-//@Entity
+@Entity
 public class CartItem implements Serializable{
     
     private static final long serialVersionUID = -904360230041854157L;
     
-    //private Product product;
-    
-    //@Id
-    //@GeneratedValue
+    @Id
+    @GeneratedValue
     private int cartItemId;
 
-    //@ManyToOne
-    //@JoinColumn(name = "cartId")
-    //@JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "cartId")
+    @JsonIgnore
     private Cart cart;
 
-    //@ManyToOne
-    //@JoinColumn(name = "productId")
+    @ManyToOne
+    @JoinColumn(name = "productId")
     private Product product;
-    
     
     private int quantity;
     private double totalPrice;
     
-    public CartItem(){}
-    
-    public CartItem(Product product, int quantity, double totalPrice){
-        this.product = product;
-        this.quantity = quantity;
-         this.totalPrice = totalPrice;
-    }
-
-    public CartItem(Product product) {
-        this.product = product;
-        this.quantity = 1;
-        this.totalPrice = product.getProductPrice();
-    }
     
      public int getCartItemId() {
         return cartItemId;
