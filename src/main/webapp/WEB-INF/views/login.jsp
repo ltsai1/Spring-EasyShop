@@ -1,17 +1,17 @@
 <%-- 
     Document   : login
-    Created on : Nov 6, 2016, 7:58:08 PM
-    Author     : Camille
+    Created on : Nov 6, 2016, 4:07:48 PM
+    Author     : duely
 --%>
 
 <%@include file="/WEB-INF/views/template/header.jsp" %>
 
 
-<div class="container-wrapper">
+<div class="container">
     <div class="login-container">
         <div id="login-box">
 
-            <h2>Login with Username and Password</h2>
+            <h2></h2>
 
             <c:if test="${not empty msg}">
                 <div class="msg">${msg}</div>
@@ -37,6 +37,8 @@
 
         </div>
     </div>
+    <%@include file="/WEB-INF/views/template/footer.jsp" %>
 </div>
 
-<%@include file="/WEB-INF/views/template/footer.jsp" %>
+
+

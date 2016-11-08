@@ -56,9 +56,10 @@
  
          <br><br> 
          <input type="submit" value="SUBMIT" class="btn btn-default"> 
-         <a href="<c:url value="/admin/productInventory" />" class="btn btn-default">CANCEL</a> 
+         <a href="<c:url value="/admin/product" />" class="btn btn-default">CANCEL</a> 
         </form:form> 
 
        
         <script src="<c:url value="/resources/js/controller.js" /> "></script>
         <%@include file="/WEB-INF/views/template/footer.jsp" %>
+

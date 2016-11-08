@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Entity
 public class CustomerOrder implements Serializable{
 
-    private static final long serialVersionUID = 2983360377227484514L;
+    private static final long serialVersionUID = 1651696765897350022L;
 
     @Id
     @GeneratedValue
@@ -72,4 +72,3 @@ public class CustomerOrder implements Serializable{
         this.shippingAddress = shippingAddress;
     }
 }
-

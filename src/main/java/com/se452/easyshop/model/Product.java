@@ -14,14 +14,15 @@ import javax.persistence.Transient;
 import org.springframework.web.multipart.MultipartFile;
 
 
+
 /**
  *
  * @author Camille
  */
 @Entity
-public class Product implements Serializable{
-    
-    private static final long serialVersionUID = -3532377236419382983L;
+public class Product implements Serializable {
+
+    private static final long serialVersionUID = 7311998262191519069L;
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -39,8 +40,6 @@ public class Product implements Serializable{
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore
     private List<CartItem> cartItemList;
-
-    public Product() {}
     
     public int getProductId() {
         return productId;
@@ -97,15 +96,15 @@ public class Product implements Serializable{
     public double getProductPrice() {
         return productPrice;
     }
-     public void setProductImage(MultipartFile productImage) {
-        this.productImage = productImage;
-    }
 
     public MultipartFile getProductImage() {
         return productImage;
     }
-    
-    
+
+    public void setProductImage(MultipartFile productImage) {
+        this.productImage = productImage;
+    }
+
     public List<CartItem> getCartItemList() {
         return cartItemList;
     }
@@ -113,5 +112,5 @@ public class Product implements Serializable{
     public void setCartItemList(List<CartItem> cartItemList) {
         this.cartItemList = cartItemList;
     }
- 
+        
 }

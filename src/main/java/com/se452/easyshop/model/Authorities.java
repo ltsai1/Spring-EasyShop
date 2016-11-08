@@ -6,12 +6,11 @@ import javax.persistence.Id;
 
 /**
  *
- * @author Camille
+ * @author duely
  */
-
 @Entity
 public class Authorities {
-
+    
     @Id
     @GeneratedValue
     private int authoritiesId;
@@ -41,4 +40,6 @@ public class Authorities {
     public void setAuthority(String authority) {
         this.authority = authority;
     }
+    
+    
 }

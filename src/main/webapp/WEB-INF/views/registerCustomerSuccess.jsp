@@ -3,7 +3,6 @@
     Created on : Nov 6, 2016, 10:06:26 PM
     Author     : Camille
 --%>
-
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@include file="/WEB-INF/views/template/header.jsp" %>
 

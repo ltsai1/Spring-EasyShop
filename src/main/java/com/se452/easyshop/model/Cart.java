@@ -1,34 +1,42 @@
 package com.se452.easyshop.model;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
- * @author Camille
+ * @author duely
  */
-
 @Entity
-public class Cart implements Serializable{
+public class Cart implements Serializable {
 
-    private static final long serialVersionUID = -7103653009861995545L;
+    private static final long serialVersionUID = 7287568730039858073L;
     
     @Id
     @GeneratedValue
     private int cartId;
-
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<CartItem> cartItems = new ArrayList<CartItem>();
+    
+    @OneToMany(mappedBy="cart", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private List<CartItem> cartItems;
     
     @OneToOne
-    @JoinColumn(name = "customerId")
+    @JoinColumn(name="customerId")
     @JsonIgnore
     private Customer customer;
     
     private double grandTotal;
-    
+
     public int getCartId() {
         return cartId;
     }

@@ -17,53 +17,45 @@
             </p>
         </div>
         
-        <%--><form:form action="${pageContext.request.contextPath}/admin/productInventory/addProduct" method="post" 
-                   commandName="product" enctype="multipart/form-data"> --%>
-            
-            <form:form action="${pageContext.request.contextPath}/admin/product/addProduct" method="post" 
-                   commandName="product">
+        <form:form action="${pageContext.request.contextPath}/admin/product/addProduct" method="post" commandName="product" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="name">Product</label> <form:errors path="productName" cssStyle="color: #ff0000;" />
+                <label for="name">Product</label> 
                 <form:input path="productName" id="name" class="form-control" />
             </div>
             
-            <div class="form-group"> <form:errors path="productBrand" cssStyle="color: #ff0000;" />
+            <div class="form-group"> 
                 <label for="brand">Brand</label>
                 <form:input path="productBrand" id="brand" class="form-control" />
             </div>
             
-            <div class="form-group"> <form:errors path="productDescription" cssStyle="color: #ff0000;" />
+            <div class="form-group"> 
                 <label for="description">Description</label>
                 <form:textarea path="productDescription" id="description" class="form-control" />
             </div>
             
             <div class="form-group"> 
-                <label for="category">Category</label> <form:errors path="productCategory" cssStyle="color: #ff0000;" />
-                    <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="clothes"/> Clothes</label>
-                    <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="shoes"/> Shoes</label>
-                    <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="bags"/> Bags</label>
-                    
-               
+                <label for="category">Category</label>
+                <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="clothes"/> Clothes</label>
+                <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="shoes"/> Shoes</label>
+                <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="bags"/> Bags</label>
             </div>
             
                     
             <div class="form-group"> 
-                <label for="gender">Gender</label> <form:errors path="productGender" cssStyle="color: #ff0000;" /> 
+                <label for="gender">Gender</label> 
                 <label class="checkbox-inline"><form:radiobutton path="productGender" id="gender" value="M" />Male</label> 
                 <label class="checkbox-inline"><form:radiobutton path="productGender" id="gender" value="F" />Female</label> 
             </div> 
  
             <div class="form-group"> 
-                <label for="price">Price</label>  <form:errors path="productPrice" cssStyle="color: #ff0000;" /> 
+                <label for="price">Price</label>  
                 <form:input path="productPrice" id="price" class="form-Control"/> 
-            </div> 
+            </div>
             
-            <%--
-                <div class="form-group">
-                <label class="control-label" for="productImage">Upload Picture</label> 
-                <form:input id="productImage" path="productImage" type="file" class="form:input-large"/> 
-                </div>
-            --%>
+            <div class="form-group">
+                <label class="control-label" for="productImage">Upload</label>
+                <form:input id="productImage" path="productImage" type="file" class="form:input-large" />
+            </div>
 
  
          <br><br> 
@@ -74,4 +66,3 @@
        
         <script src="<c:url value="/resources/js/controller.js" /> "></script>
         <%@include file="/WEB-INF/views/template/footer.jsp" %>
-

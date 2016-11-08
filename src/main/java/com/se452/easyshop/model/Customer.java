@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Entity
 public class Customer implements Serializable{
 
-    private static final long serialVersionUID = 5140900014886997914L;
+    private static final long serialVersionUID = 7807170639243389398L;
 
     @Id
     @GeneratedValue

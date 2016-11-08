@@ -2,18 +2,6 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@include file="/WEB-INF/views/template/header.jsp"%>
 
-<script>
-    $(document).ready(function(){
-        var searchCondition = '${searchCondition}';
-
-        $('.table').DataTable({
-            "lengthMenu": [[1,2,3,5,10,-1], [1,2,3,5,10, "All"]],
-            "oSearch": {"sSearch": searchCondition}
-        });
-    });
-
-</script>
-
 <div class="container-wrapper">
     <div class="container">
         <div class="page-header">
@@ -37,8 +25,7 @@
             </thead>
             <c:forEach items="${products}" var="product">
                 <tr>
-                    <td><img src="<c:url value="/images/${product.productId}.jpg" /> " alt="image"
-                             style="width:100%"/></td>
+                    <td><img src="<c:url value="/images/${product.productId}.jpg" /> " alt="image" style="width:100%"/></td>
                     <td>${product.productName}</td>
                     <td>${product.productBrand}</td>
                     <td>${product.productDescription}</td>
@@ -50,5 +37,5 @@
                 </tr>
             </c:forEach>
         </table>
-
+        
 <%@include file="/WEB-INF/views/template/footer.jsp" %>
